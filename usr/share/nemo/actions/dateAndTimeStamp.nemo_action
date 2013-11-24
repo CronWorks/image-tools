@@ -1,0 +1,27 @@
+[Nemo Action]
+# **** REQUIRED ****
+Name=Date+Time Stamp
+
+# %N can be used as with the Name field, same rules apply
+Comment=Date+Time Stamp the selected image(s)
+
+# **** REQUIRED ****
+Exec=date-stamp-images --time %F
+
+Icon-Name=stock_calendar
+
+# [S]ingle
+# [M]ultiple
+# Any
+# NotNone
+# None (background click)
+# or a number defining exact # of files
+# Defaults to Single if this field is missing
+Selection=NotNone
+
+# **** REQUIRED ****
+# semicolon-separated
+# case-INsensitive
+# 'dir', 'any', 'none' are valid
+Extensions=jpg;gif;png;bmp;dir;
+

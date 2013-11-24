@@ -1,0 +1,8 @@
+[Nemo Action]
+Name=All Star
+Comment=Copy the image to an AllStars folder
+Icon-Name=star
+Exec=all-star %F
+Selection=NotNone
+Extensions=jpg;gif;png;bmp;svg;
+

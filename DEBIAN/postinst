@@ -1,0 +1,11 @@
+#!/bin/sh
+chown root:root /usr/local/bin/all-star
+chmod 755 /usr/local/bin/all-star
+chown root:root /usr/local/bin/date-stamp-images
+chmod 755 /usr/local/bin/date-stamp-images
+chown root:root /usr/local/bin/scale-image
+chmod 755 /usr/local/bin/scale-image
+
+# a bit hacky but come on, I'm just a regular guy
+chown root:root /usr/share/nemo/actions -R
+

@@ -1,0 +1,11 @@
+Package: image-tools
+Version: 2.13
+Section: cws
+Priority: optional
+Architecture: all
+Essential: no
+Depends: py-base, python-imaging, python-pyexiv2
+Installed-Size: 1
+Maintainer: Luke Scott [luke at cronworks dot net]
+Provides: image-tools
+Description: [cws] image tools to date-stamp filenames and move images to All Stars folder

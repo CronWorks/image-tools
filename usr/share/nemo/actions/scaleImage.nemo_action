@@ -1,0 +1,27 @@
+[Nemo Action]
+# **** REQUIRED ****
+Name=Scale Image
+
+# %N can be used as with the Name field, same rules apply
+Comment=Create a scaled copy at 1200 pixels
+
+# **** REQUIRED ****
+Exec=scale-image %F
+
+Icon-Name=zoom-best-fit
+
+# [S]ingle
+# [M]ultiple
+# Any
+# NotNone
+# None (background click)
+# or a number defining exact # of files
+# Defaults to Single if this field is missing
+Selection=NotNone
+
+# **** REQUIRED ****
+# semicolon-separated
+# case-INsensitive
+# 'dir', 'any', 'none' are valid
+Extensions=jpg;gif;png;bmp;
+
