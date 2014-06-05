@@ -55,7 +55,7 @@ class ImageDateStamper(Job):
 
         for filename in sorted(filesToStamp):
             if not imageTool.isImageFilename(filename):
-                self.out.put("Skipping %s because it doesn't look like an image file." % filename, self.out.LOG_LEVEL_IMPORTANT)
+                self.out.put("Skipping %s because it doesn't look like an image file." % filename, self.out.LOG_LEVEL_WARN)
                 continue
             try:
                 fileInfo = imageTool.getFileInfo(filename, okToUseFileName=True)
@@ -64,9 +64,9 @@ class ImageDateStamper(Job):
                 self.out.put("File is broken or has no data!", self.out.LOG_LEVEL_WARN)
                 self.out.put(traceback.format_exc(), self.out.LOG_LEVEL_DEBUG)
             if not fileInfo:
-                self.out.put("Unable to stamp file: %s" % basename(filename), self.out.LOG_LEVEL_IMPORTANT)
+                self.out.put("Unable to stamp file: %s" % basename(filename), self.out.LOG_LEVEL_WARN)
                 continue
-            self.out.put("Stamping %s..." % filename, self.out.LOG_LEVEL_IMPORTANT)
+            self.out.put("Stamping %s..." % filename, self.out.LOG_LEVEL_WARN)
             self.rename(filename, fileInfo)
 
 

@@ -69,16 +69,16 @@ class AllStarCopier(Job):
         for filename in sorted(listdir(path)):
             # does this name match the regex?
             if not self.isAllStarFolder(filename):
-                self.out.put("- filename %s failed all star regex" % filename, self.out.LOG_LEVEL_MUNDANE)
+                self.out.put("- filename %s failed all star regex" % filename, self.out.LOG_LEVEL_DEBUG)
                 continue
 
-            self.out.put("- all star filename %s found! (not a confirmed directory yet)" % filename, self.out.LOG_LEVEL_MUNDANE)
+            self.out.put("- all star filename %s found! (not a confirmed directory yet)" % filename, self.out.LOG_LEVEL_DEBUG)
 
             # is the matching name a folder?
             allStarsFullPath = "%s/%s" % (path, filename)
             if isdir(allStarsFullPath):
                 # we've found what we are looking for
-                self.out.put("- full path %s is a confirmed directory! Adding to result list." % allStarsFullPath, self.out.LOG_LEVEL_MUNDANE)
+                self.out.put("- full path %s is a confirmed directory! Adding to result list." % allStarsFullPath, self.out.LOG_LEVEL_DEBUG)
                 result.append(allStarsFullPath)
         return result
 

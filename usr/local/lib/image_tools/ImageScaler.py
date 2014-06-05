@@ -43,7 +43,7 @@ class ImageScaler(Job):
         self.out.indent("Scaling file: %s" % sourceFileName)
         targetFileName = self.getTargetFileName(sourceFileName)
 
-        self.out.put("reading image file...", self.out.LOG_LEVEL_MUNDANE)
+        self.out.put("reading image file...", self.out.LOG_LEVEL_DEBUG)
         sourceImage = Image.open(sourceFileName)
 
         self.processImage(sourceImage, targetFileName)
@@ -63,14 +63,14 @@ class ImageScaler(Job):
             self.out.put("converting image to greyscale...", self.out.LOG_LEVEL_VERBOSE)
             sourceImage = sourceImage.convert("L")
 
-        self.out.put("scaling image...", self.out.LOG_LEVEL_MUNDANE)
+        self.out.put("scaling image...", self.out.LOG_LEVEL_DEBUG)
         sourceImage.thumbnail(size, Image.ANTIALIAS)
 
         if self.inDebugMode():
             # if we're running in mock mode, then we shouldn't be changing anything on the filesystem.
             self.out.put("DEBUG: Not writing image file because we're in mock mode")
         else:
-            self.out.put("writing image file...", self.out.LOG_LEVEL_MUNDANE)
+            self.out.put("writing image file...", self.out.LOG_LEVEL_DEBUG)
             sourceImage.save(targetFileName)
 
     def getTargetFileName(self, sourceFileName):
