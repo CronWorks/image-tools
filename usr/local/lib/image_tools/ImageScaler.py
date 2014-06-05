@@ -75,8 +75,8 @@ class ImageScaler(Job):
 
     def getTargetFileName(self, sourceFileName):
         self.out.put("Setting target filename...", self.out.LOG_LEVEL_VERBOSE)
-        splitFileName = splitext(sourceFileName)
-        targetFileName = splitFileName[0] + FILENAME_SCALED_SUFFIX + splitFileName[1]
+        (base, ext) = splitext(sourceFileName)
+        targetFileName = base + FILENAME_SCALED_SUFFIX + ext.lower()
         self.out.put("source path: %s" % sourceFileName, self.out.LOG_LEVEL_VERBOSE)
         self.out.put("target path: %s" % targetFileName, self.out.LOG_LEVEL_VERBOSE)
         return targetFileName
