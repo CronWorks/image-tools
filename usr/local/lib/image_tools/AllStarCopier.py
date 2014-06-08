@@ -36,6 +36,7 @@ class AllStarCopier(Job):
         '''
         if currentPath == None:
             currentPath = dirname(sourceFullPath)
+        self.out.put('looking in %s for an AllStars folder...' % currentPath)
         if currentPath == '/':
             # we got all the way to the root without finding an all star folder to use.
             # create a new all star folder as a sibling of the image.
@@ -48,10 +49,11 @@ class AllStarCopier(Job):
         else:
             allStarsFullPaths = self.getAllStarsFullPaths(currentPath)
             if not allStarsFullPaths:
-                # no all star folders at the current level. Recurse.
+                # recurse
+                self.out.put('no all star folders at the current level.')
                 self.copyToAllStars(sourceFullPath, currentPath=dirname(currentPath))
             for allStarsFullPath in allStarsFullPaths:
-                # all star path already exists
+                self.out.put('found existing AllStar folder %s.' % allStarsFullPath)
                 self._copyToAllStars(sourceFullPath, allStarsFullPath)
 
     def _copyToAllStars(self, sourceFullPath, allStarsFullPath):
