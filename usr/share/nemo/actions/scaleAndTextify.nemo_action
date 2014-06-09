@@ -6,7 +6,7 @@ Name=Scale and Greyscale Image
 Comment=Create a scaled copy at 1200 pixels, and convert to greyscale
 
 # **** REQUIRED ****
-Exec=scale-image --greyscale %F
+Exec=scale-image-nemo-wrapper --greyscale %F
 
 Icon-Name=zoom-best-fit
 

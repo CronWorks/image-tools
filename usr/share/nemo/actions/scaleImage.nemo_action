@@ -6,7 +6,7 @@ Name=Scale Image
 Comment=Create a scaled copy at 1200 pixels
 
 # **** REQUIRED ****
-Exec=scale-image %F
+Exec=scale-image-nemo-wrapper %F
 
 Icon-Name=zoom-best-fit
 
