@@ -18,9 +18,6 @@ TIME_FORMAT_VERBOSE = '{0:%Y-%m-%d %H:%M:%S}'
 
 class ImageDateStamper(Job):
 
-    def __init__(self):
-        super(ImageDateStamper, self).__init__()
-
     def doRunSteps(self):
         self.stamp()
 
