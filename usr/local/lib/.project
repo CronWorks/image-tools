@@ -3,6 +3,7 @@
 	<name>image-tools</name>
 	<comment></comment>
 	<projects>
+		<project>py-base</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>
